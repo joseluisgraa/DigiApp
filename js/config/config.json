@@ -1,0 +1,74 @@
+{
+    "services": {
+        "proxyHost": ""
+    },
+    
+    "map":{
+        "projection": "EPSG:27700",
+        "tileSize": 256,
+        "maxExtent": [
+                1346.748175220855,
+                7097.996956234318,
+                689474.7481752208,
+                1383353.996956234
+        ],
+        "restrictedExtent": [
+                1346.748175220855,
+                7097.996956234318,
+                689474.7481752208,
+                1383353.996956234
+        ],
+        "resolutions": [
+            895.9999999999999,
+            447.99999999999994,
+            223.99999999999997,
+            111.99999999999999,
+            55.99999999999999,
+            27.999999999999996,
+            13.999999999999998,
+            6.999999999999999,
+            3.4999999999999996,
+            1.7499999999999998,
+            0.8749999999999999,
+            0.43749999999999994,
+            0.21874999999999997,
+            0.10937499999999999,
+            0.05468749999999999,
+            0.027343749999999997,
+            0.013671874999999998,
+            0.006835937499999999,
+            0.0034179687499999996,
+            0.0017089843749999998
+        ],
+        "units": "m",
+        "allOverlays": true
+    },
+    "layers": [
+        {
+            "layerId": "OrdnanceSurvey",
+            "type": "WMS",
+            "name": "Ordnance Survey",
+            "layers": [
+                "BASE_WMS:OS"
+            ],
+            "projection": "EPSG:27700",
+            "maxExtent": [
+                1346.748175220855,
+                7097.996956234318,
+                689474.7481752208,
+                1383353.996956234
+            ],
+            "format": "image/png8",
+            "transitionEffect": "resize",
+            "url": "localhost/geoserver/wms",
+            "visibility": true,
+            "isBaseLayer": true,
+            "displayInLayerSwitcher": true,
+            "queryable": true,
+            "queryLayerID": "OSQuery",
+            "layerGroup": "Background Layers",
+            "opacity": 1,
+            "indexInGroup": 1
+        }
+    ]
+}
