@@ -28,6 +28,9 @@ app.service('LayerConfigurationParser', function(Log, Strings, MapService) {
         if (conf.tiled) {
             params.tilesOrigin = MapService.map.maxExtent.left + "," + MapService.map.maxExtent.bottom;
         }
+        
+        Log.debug("Layer Params:")
+        Log.debug(params);
 
         var options = {};
         assignProperty(conf, options, "isTraceable");
@@ -53,14 +56,19 @@ app.service('LayerConfigurationParser', function(Log, Strings, MapService) {
         assignProperty(conf, options, "parentQueryLayerID");
         assignProperty(conf, options, "minScale");
         assignProperty(conf, options, "maxScale");
+        
+        Log.debug("Layer Options:")
+        Log.debug(options);
+        
+        var layer = new OpenLayers.Layer.WMS(conf.name, conf.url, params, options)
 
-        var url = OpenLayers.ProxyHost + conf.url + "?";
-        var layer = new OpenLayers.Layer.WMS(url, params, options);
         MapService.map.addLayer(layer);
 
         if (options.isBaseLayer) {
             MapService.map.setBaseLayer(layer);
         }
+        
+        MapService.map.zoomToMaxExtent();
 
         Log.debug("WMS layer created");
     };

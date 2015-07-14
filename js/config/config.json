@@ -60,7 +60,7 @@
             ],
             "format": "image/png8",
             "transitionEffect": "resize",
-            "url": "localhost/geoserver/wms",
+            "url": "http://localhost/geoserver/gwc/service/wms",
             "visibility": true,
             "isBaseLayer": true,
             "displayInLayerSwitcher": true,

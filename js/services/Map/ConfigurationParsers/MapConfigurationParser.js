@@ -37,7 +37,7 @@ app.service('MapConfigurationParser', function($rootScope, Log, MapService) {
         assignProperty(mapConf, options, "resolutions");
         
         // Be sure to not have any default control on the map
-        options.controls = [];
+        //options.controls = [];
         
         // Create the OL map
         createMapFromOptions(divName, options);
@@ -46,29 +46,13 @@ app.service('MapConfigurationParser', function($rootScope, Log, MapService) {
     };
     
     var createMapFromOptions = function(divName, mapOptions){
-    	    	
-    	// Create an OpenLayers instance of a Map
-    	var map = new OpenLayers.Map(divName, mapOptions);
-    	
-        // This fixes the event when the user zooms out fast (zoom level jump) 
-        // which apparently does't get caught by zoomTo
-        map.zoomToProxy = map.zoomTo;
-        map.zoomTo = function(zoom, xy) {
-            if (this.zoom >= zoom && zoom <= 9) {
-                //just do nothing
-            } else {
-                map.zoomToProxy.apply(this, arguments);
-            }
-        };
-        map.moveToProxy = map.moveTo;
-        map.moveTo = function(lonlat, zoom) {
-            if (this.zoom >= zoom && zoom <= 9) {
-                //just do nothing
-            } else {
-                map.moveToProxy.apply(this, arguments);
-            }
-        };
+    	 
+        Log.debug("Map Options:")
+        Log.debug(mapOptions);
         
+    	// Create an OpenLayers instance of a Map
+    	var map = new OpenLayers.Map(divName, mapOptions);        
+
         // Store the map into the MapService
         MapService.map = map;
     };

@@ -34,8 +34,7 @@ app.factory('ConfigurationManager', function($rootScope, Log, MapConfigurationPa
             // Proxy to use by OpenLayers
             OpenLayers.ProxyHost = services.proxyHost;
             
-            MapConfigurationParser.createMapFromConfiguration('map', data.map); 
-            
+            MapConfigurationParser.createMapFromConfiguration('map', data.map);             
             LayersService.addLayersToMap(data.layers);
             MapService.map.zoomToExtent(data.map.maxExtent);
     		ControlsService.addControlsToMap(data.controls);

@@ -7,7 +7,7 @@
  * @listens constants.Events#layersRefreshed
  * @listens constants.Events#configurationLoaded
  */
-app.service('Application', function($rootScope, Log, ConfigurationManager, Events) {
+app.service('Application', function($rootScope, Log, ConfigurationManager, Events, SysConstants) {
     
     console.log("Application Service Instantiated");
     
@@ -24,9 +24,11 @@ app.service('Application', function($rootScope, Log, ConfigurationManager, Event
 	    
 	    // DPI for scales
 	    OpenLayers.DOTS_PER_INCH = 90;
-	    
-	    // Setup manually OL image path because the minified file is not aware of its location
-	    OpenLayers.ImgPath = SysConstants.appserverBaseUrl + "/resources/js/digitising/libs/openlayers_2.13.1/img/";
+        
+        // Setup manually OL image path because the minified file is not aware of its location
+        
+	    OpenLayers.ImgPath = SysConstants.appserverBaseUrl + "/js/libs/openlayers_2.13.1/img";
+        Log.debug("Openlayers ImgPath: " + OpenLayers.ImgPath);
 	};
     
     return {
@@ -51,6 +53,9 @@ app.service('Application', function($rootScope, Log, ConfigurationManager, Event
         		Log.setLevel(Log.LEVELS_LIST.ERROR);
         	}
             Log.debug("Log Initialized, level: " + Log.getLevel());
+            
+            // Setup constants of libraries used by the application
+    		setupLibraries();
             
             // Load configuration
             ConfigurationManager.loadConfiguration();

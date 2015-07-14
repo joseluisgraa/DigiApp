@@ -29,8 +29,7 @@ app.factory('ControlsService', function($rootScope, Log, MapService, Events) {
 //                });
             	
                 // Add a basic navigation control
-                map.addControl(new OpenLayers.Control.Navigation());
-
+                map.addControl(new OpenLayers.Control.MousePosition());
                 
                 // Send event to controls and manage shortcuts each time a zoom change occurs
                 // Because it may be wanted in this case to deactivate some of application controls

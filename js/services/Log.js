@@ -87,7 +87,7 @@ app.service('Log', function() {
          */
         debug: function(msg) {
             if (currentLevel >= this.LEVELS_LIST.DEBUG && window.console && console.info) {
-                //Log as info because console.debug doesn't exist in IE
+                //Log as info because console.log doesn't exist in IE
                 console.info(msg);
             }
         },
