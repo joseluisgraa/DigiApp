@@ -1,20 +1,20 @@
 /**
  * Layer service
  * @ngdoc service 
- * @name LayersService
+ * @name LayerInitService
  * @memberof services.map
  * @fires constants.Events#layersLoaded
  * @fires constants.Events#layersRefreshed
  */
-app.service('LayersService', function(LayerConfigurationParser, MapService, Log) {
+app.service('LayerInitService', function(LayerConfigurationParser, MapService, Log) {
 
-    Log.debug("Layer Service Instantiated");
+    Log.debug("Layer Init Service Instantiated");
     
-    var LayersService = {
+    var LayerInitService = {
     		
     	/**
     	 * Add all given layers retrieved from the configuration to the map
-         * @memberof services.map.LayersService
+         * @memberof services.map.LayerInitService
     	 */
 		addLayersToMap: function(layersConf) {
 
@@ -22,5 +22,5 @@ app.service('LayersService', function(LayerConfigurationParser, MapService, Log)
 	    }
     };
     
-    return LayersService;
+    return LayerInitService;
 });

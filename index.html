@@ -27,7 +27,7 @@
         <script src="./js/services/Log.js"></script>
                 
         <script src="./js/services/Map/MapService.js"></script>
-        <script src="./js/services/Map/LayersService.js"></script>
+        <script src="./js/services/Map/LayerInitService.js"></script>
         <script src="./js/services/Map/ControlsService.js"></script>
         
         <script src="./js/services/Map/ConfigurationParsers/MapConfigurationParser.js"></script>
@@ -36,11 +36,27 @@
         <script src="./js/constants/Strings.js"></script>
         <script src="./js/constants/Events.js"></script>
         <script src="./js/constants/SysConstants.js"></script>
+        
+        <script src="./js/maptools/legend/LegendController.js"></script>
+        <script src="./js/maptools/legend/LegendPopupController.js"></script>
+        <script src="./js/maptools/legend/LegendService.js"></script>
 
     </head>
 
     <body ng-controller="MainController" ng-init="init({})">
         <div id="map" style="width: 100%; height: 100%;"  tabindex="0"></div>
+        
+        <div id="MapToolsContainer">
+            <div id="ButtonsContainer">
+                <div id="LegendContainer" class="floatleft" ng-controller="LegendController">
+                    <div class="floatleft">
+                        <a tabindex="1" href="#" id="legend" type="button" ng-click="onLegendButtonClick()"
+                           class="legend button-active">{{Strings.legendButtonLabel}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
 
 </html>

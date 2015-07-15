@@ -6,7 +6,7 @@
  * @fires constants.Events#zoomInEditRange
  * @fires constants.Events#zoomOffEditRange
  */
-app.factory('ControlsService', function($rootScope, Log, MapService, Events) {
+app.service('ControlsService', function($rootScope, Log, MapService, Events) {
         
         var zoomChanged = function (){
         	Log.debug("Zoom Changed");

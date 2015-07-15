@@ -17,3 +17,21 @@ div.olMap {
     background-color: white;
     padding: 0 0.5em 0.5em 0.5em;
 }
+
+.floatleft {
+  float: left;
+}
+
+#MapToolsContainer {
+  left: 15px;
+  position: fixed;
+  top: 115px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+#ButtonsContainer {
+  border: 6px solid white;
+  box-shadow: 0 3px 8px 0 rgba(50, 50, 50, 0.75);
+  display: table;
+}

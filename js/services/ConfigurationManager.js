@@ -5,7 +5,7 @@
  * @memberof services
  * @fires constants.Events#configurationLoaded
  */
-app.factory('ConfigurationManager', function($rootScope, Log, MapConfigurationParser, LayersService, MapService, Events, ControlsService) {
+app.service('ConfigurationManager', function($rootScope, Log, MapConfigurationParser, LayerInitService, MapService, Events, ControlsService) {
 
     /**
      * retrieve the role configuration
@@ -35,7 +35,7 @@ app.factory('ConfigurationManager', function($rootScope, Log, MapConfigurationPa
             OpenLayers.ProxyHost = services.proxyHost;
             
             MapConfigurationParser.createMapFromConfiguration('map', data.map);             
-            LayersService.addLayersToMap(data.layers);
+            LayerInitService.addLayersToMap(data.layers);
             MapService.map.zoomToExtent(data.map.maxExtent);
     		ControlsService.addControlsToMap(data.controls);
             

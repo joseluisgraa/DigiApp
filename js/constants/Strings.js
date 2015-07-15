@@ -10,9 +10,8 @@ app.service('Strings', function($sce) {
         
         mapLoadedMessage: "Map has been loaded",
         
-        //Select
-        selectButtonLabel: "Select",
-        //Add
-        createButtonLabel: "Create"
+        //Legend
+        legendButtonLabel: "Legend",
+
     };
 });
