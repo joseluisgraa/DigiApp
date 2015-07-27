@@ -12,6 +12,8 @@ app.service('Strings', function($sce) {
         
         //Legend
         legendButtonLabel: "Legend",
+        
+        closeButtonLabel: "Close",
 
     };
 });

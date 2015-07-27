@@ -8,7 +8,8 @@ app.service('LayerConfigurationParser', function(Log, Strings, MapService) {
 
     Log.debug("Layer Configuration Parser Instantiated");
     
-
+    var LEGEND_OPTIONS = "version=1.1.1&request=GetLegendGraphic&format=image/png&legend_options=forceLabels:on";
+    
     /**
      * Creates a WMS layer from the configuration and adds it to the map
      *
@@ -59,6 +60,10 @@ app.service('LayerConfigurationParser', function(Log, Strings, MapService) {
         
         Log.debug("Layer Options:")
         Log.debug(options);
+        
+        if (conf.legendUrl) {
+            options.legend = conf.legendUrl + "?" + LEGEND_OPTIONS + "&layer=" + conf.layers[0];
+        }
         
         var layer = new OpenLayers.Layer.WMS(conf.name, conf.url, params, options)
 

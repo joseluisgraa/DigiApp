@@ -13,10 +13,10 @@
                 1383353.996956234
         ],
         "restrictedExtent": [
-                1346.748175220855,
-                7097.996956234318,
-                689474.7481752208,
-                1383353.996956234
+                73000,
+                7000,
+                700000,
+                670000
         ],
         "resolutions": [
             895.9999999999999,
@@ -61,6 +61,7 @@
             "format": "image/png8",
             "transitionEffect": "resize",
             "url": "http://localhost/geoserver/gwc/service/wms",
+            "legendUrl": "http://localhost/geoserver/wms",
             "visibility": true,
             "isBaseLayer": true,
             "displayInLayerSwitcher": true,
